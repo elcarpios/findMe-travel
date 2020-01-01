@@ -1,6 +1,6 @@
-# find-me
+# findMe-travel
 
-> FindMe
+> FindMe-travel
 
 ## Build Setup
 

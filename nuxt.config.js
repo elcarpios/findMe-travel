@@ -39,7 +39,15 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    // Doc: https://github.com/nuxt-community/analytics-module
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-155240781-1',
+      debug: {
+        enabled: true,
+        sendHitTask: true
+      }
+    }]
   ],
   /*
   ** Nuxt.js modules
