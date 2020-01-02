@@ -17,6 +17,26 @@ export default {
     ]
   },
   /*
+  ** Customize one signal
+  */
+  oneSignal: {
+    init: {
+      appId: '2d305783-e16d-4519-b070-f0ec96d24d5c',
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: false
+      }
+    }
+  },
+  /*
+  ** Customize pwa
+  */
+  pwa: {
+    workbox: {
+      offlineAnalytics: true
+    }
+  },
+  /*
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
@@ -53,6 +73,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/onesignal',
     '@nuxtjs/pwa'
   ],
   /*
