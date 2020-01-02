@@ -9,6 +9,7 @@ export default {
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
+      { name: 'theme-color', content: '#4dc0b5' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
@@ -32,6 +33,14 @@ export default {
   ** Customize pwa
   */
   pwa: {
+    manifest: {
+      lang: 'en',
+      name: 'findMe.travel',
+      short_name: 'findMe.travel',
+      theme_color: '#4dc0b5',
+      background_color: '#4dc0b5',
+      description: 'Best place to get lost in world'
+    },
     workbox: {
       offlineAnalytics: true
     }
