@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-primary py-1 text-white border-t border-white max-w-full">
+  <nav class="bg-primaryDark py-1 text-white border-t border-white max-w-full">
     <ul class="flex no-wrap overflow-x-auto scrolling-touch w-auto">
       <li>Latest</li>
       <li>Stories</li>

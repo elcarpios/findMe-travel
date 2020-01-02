@@ -38,7 +38,7 @@ export default {
       name: 'findMe.travel',
       short_name: 'findMe.travel',
       theme_color: '#4dc0b5',
-      background_color: '#4dc0b5',
+      background_color: '#FFFFF',
       description: 'Best place to get lost in world'
     },
     workbox: {
