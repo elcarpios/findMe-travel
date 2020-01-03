@@ -6,7 +6,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'findMe.travel',
     meta: [
       { charset: 'utf-8' },
       { name: 'theme-color', content: '#4dc0b5' },
@@ -38,7 +38,7 @@ export default {
       name: 'findMe.travel',
       short_name: 'findMe.travel',
       theme_color: '#4dc0b5',
-      background_color: '#FFFFF',
+      background_color: '#FFFFFF',
       description: 'Best place to get lost in world'
     },
     workbox: {
