@@ -1,10 +1,13 @@
 ---
 id: 1
 title: 'This is the title, and it is a sooo large title because i want to say a lot of things'
-media: 'https://blog.fuertehoteles.com/wp-content/uploads/2016/07/playas-de-estepona.jpg'
+media: {
+  src: 'https://blog.fuertehoteles.com/wp-content/uploads/2016/07/playas-de-estepona.jpg',
+  alt: 'Beach from Esteppona'
+}
 author: 'Carpio'
 date: 'Today'
-excerpt: 'Jamón del bueno en París'
+description: 'Jamón del bueno en París'
 categories: ['frontend', 'webdev']
 tags: ['vue.js', 'markdown']
 ---

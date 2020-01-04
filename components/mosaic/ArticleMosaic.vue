@@ -9,25 +9,28 @@
       </time>
     </div>
     <nuxt-link :to="{ name: 'posts-slug', params: { slug, isDeeplinking: false }}">
-      <img
-        :src="post.media"
-        class="media h-48 object-fill w-full"
-      >
-      </img>
+      <Img
+        :src="post.media.src"
+        :alt="post.media.alt"
+        :className="'media h-48 object-fill w-full'"
+      />
     </nuxt-link>
     <div class="mosaic-subtitle">
       {{ post.subtitle }}
     </div>
     <nuxt-link :to="{ name: 'posts-slug', params: { slug, isDeeplinking: false }}">
-      <p class="mosaic-title justify font-bold leading-relaxed mt-1 mb-1 mx-1">
+      <h1 class="mosaic-title justify font-bold leading-relaxed mt-1 mb-1 mx-1">
         {{ post.title }}
-      </p>
+      </h1>
     </nuxt-link>
   </article>
 </template>
 
 <script>
+import Img from '~/components/images/Img';
+
 export default {
+  components: { Img },
   props: {
     slug: {
       type: String,

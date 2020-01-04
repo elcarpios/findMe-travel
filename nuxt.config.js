@@ -17,11 +17,10 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'findMe.travel',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'theme-color', content: '#4dc0b5' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'charset', charset: 'utf-8' },
+      { hid: 'theme-color', name: 'theme-color', content: '#4dc0b5' },
+      { hid: 'viewport', name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
@@ -69,6 +68,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/vue-inject.js'
   ],
   /*
   ** Nuxt.js dev-modules

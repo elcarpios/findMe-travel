@@ -17,9 +17,3 @@ export default {
   components: { Header, Main, Menu, Footer }
 };
 </script>
-
-<style lang="postcss">
-.media {
-  @apply bg-secondary;
-}
-</style>

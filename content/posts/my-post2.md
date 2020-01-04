@@ -1,7 +1,10 @@
 ---
 id: 2
 title: '2222222'
-media: 'https://blog.fuertehoteles.com/wp-content/uploads/2016/07/playas-de-estepona.jpg'
+media: {
+  src: 'https://blog.fuertehoteles.com/wp-content/uploads/2016/07/playas-de-estepona.jpg',
+  alt: 'Beach from Esteppona'
+}
 author: 'Carpio'
 date: 'Today'
 excerpt: 'Jamón del bueno en París'

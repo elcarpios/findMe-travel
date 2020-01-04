@@ -8,7 +8,7 @@ export const SECTIONS = [
     slug: 'stories'
   },
   {
-    name: 'About us',
-    slug: 'about-us'
+    name: 'About',
+    slug: 'about'
   }
 ];

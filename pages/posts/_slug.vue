@@ -6,7 +6,11 @@
     <a v-else @click="$router.go(-1)" class="go-back">
       <span>X</span>
     </a>
-    <img :src="headlines.media" class="media h-56 object-fill w-full">
+    <Img
+      :src="headlines.media.src"
+      :alt="headlines.media.alt"
+      :className="'media h-56 object-fill w-full'"
+    />
     <div class="article-details py-3 px-2">
       <div class="metadata-details flex justify-between items-center mb-2">
         <span class="author border-l-4 border-red pl-2 italic">{{ headlines.author }}</span>
@@ -21,16 +25,22 @@
           {{ category }}
         </li>
       </ul>
-      <div v-html="headlines.excerpt" class="details-excerpt" />
+      <div v-html="headlines.description" class="details-description" />
       <component :is="articleBody" />
     </div>
   </article>
 </template>
 
 <script>
+import Img from '~/components/images/Img';
+
 export default {
+  components: { Img },
   data () {
     return { articleBody: null };
+  },
+  head () {
+    return this.$buildMetas(this.headlines);
   },
   asyncData ({ params }) {
     return {
