@@ -1,29 +1,29 @@
 <template>
-  <div>
-    <h1 class="font-extrabold">
-      Main Content
-    </h1>
-    <!-- <h1>My blog posts</h1>
-    <ul>
-      <li v-for="post in posts" :key="post.attributes.title">
-        <h1>{{ post.attributes.title }}</h1>
-      </li>
-    </ul> -->
-  </div>
+  <keep-alive>
+    <span>
+      <ArticleMosaic :key="slug" v-for="slug in slugs" :slug="slug" :type="type" />
+    </span>
+  </keep-alive>
 </template>
 
 <script>
-export default {
-  data () {
-    return {};
-  },
-  asyncData () {
-    const resolve = require.context('~/content/posts', true, /\.md$/);
+import ArticleMosaic from '~/components/mosaic/ArticleMosaic';
 
-    return { posts: resolve.keys().map(resolve) };
-  },
-  methods: {
-    getPermalink (post) {}
+export default {
+  components: { ArticleMosaic },
+  asyncData ({ route }) {
+    let resolve;
+    const isLatest = route.name === 'index';
+
+    if (isLatest) {
+      resolve = require.context('~/content/posts/', true, /\.md$/);
+    } else {
+      resolve = require.context('~/content/stories/', true, /\.md$/);
+    }
+    return {
+      slugs: resolve.keys().map(slug => slug.slice(2).slice(0, -3)),
+      type: isLatest ? 'posts' : 'stories'
+    };
   }
 };
 </script>
