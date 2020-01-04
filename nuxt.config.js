@@ -1,9 +1,18 @@
 import Mode from 'frontmatter-markdown-loader/mode';
 
 const path = require('path');
+const glob = require('glob');
 
 export default {
   mode: 'universal',
+  /*
+  ** Generate routes
+  */
+  generate: {
+    routes: () => glob
+      .sync('posts/*.md', { cwd: 'content' })
+      .map(slug => slug.slice(0, -3))
+  },
   /*
   ** Headers of the page
   */
