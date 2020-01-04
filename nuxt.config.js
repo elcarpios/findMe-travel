@@ -1,5 +1,7 @@
 import Mode from 'frontmatter-markdown-loader/mode';
 
+const path = require('path');
+
 export default {
   mode: 'universal',
   /*
@@ -73,7 +75,7 @@ export default {
     ['@nuxtjs/google-analytics', {
       id: 'UA-155240781-1',
       debug: {
-        enabled: true,
+        enabled: false,
         sendHitTask: true
       }
     }]
@@ -95,8 +97,12 @@ export default {
     extend (config, ctx) {
       config.module.rules.push({
         test: /\.md$/,
+        include: path.resolve(__dirname, 'content'),
         loader: 'frontmatter-markdown-loader',
         options: {
+          vue: {
+            root: 'article-body'
+          },
           mode: [Mode.VUE_COMPONENT]
         }
       });
