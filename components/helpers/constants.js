@@ -1,7 +1,7 @@
 export const SECTIONS = [
   {
     name: 'Latest',
-    slug: ''
+    slug: 'posts'
   },
   {
     name: 'Stories',

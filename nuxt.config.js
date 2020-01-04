@@ -94,7 +94,8 @@ export default {
   */
   modules: [
     '@nuxtjs/onesignal',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    'nuxt-lazy-load'
   ],
   /*
   ** Build configuration
