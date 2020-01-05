@@ -1,10 +1,10 @@
 <template>
-  <article class="absolute top-0 bg-white">
+  <article class="fixed top-0 bottom-0 min-h-full overflow-y-scroll bg-white">
     <a v-if="isDeeplinking" class="go-back" target="_self" to="/">
-      <span>X</span>
+      <button>X</button>
     </a>
     <a v-else @click="$router.go(-1)" class="go-back">
-      <span>X</span>
+      <button>X</button>
     </a>
     <Img
       :src="headlines.media.src"
@@ -65,7 +65,7 @@ export default {
 }
 
 .page-enter {
-  top: -150%;
+  top: 100%;
 }
 
 .page-enter-to {
@@ -73,7 +73,7 @@ export default {
 }
 
 .page-enter-active {
-  transition: top 1.2s;
+  transition: top 0.4s;
 }
 
 .page-leave {
@@ -81,10 +81,10 @@ export default {
 }
 
 .page-leave-to {
-  top: -150%;
+  top: 100%;
 }
 
 .page-leave-active {
-  transition: top 0.6s;
+  transition: top 0.4s;
 }
 </style>
