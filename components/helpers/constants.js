@@ -12,3 +12,8 @@ export const SECTIONS = [
     slug: 'about'
   }
 ];
+
+export const MOSAIC = {
+  startingArticles: 5,
+  lazyLoadArticles: 3
+};
