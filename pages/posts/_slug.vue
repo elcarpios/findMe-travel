@@ -65,7 +65,7 @@ export default {
 }
 
 .page-enter {
-  top: -60%;
+  top: -150%;
 }
 
 .page-enter-to {
@@ -76,15 +76,15 @@ export default {
   transition: top 1.2s;
 }
 
-.page-leave-to {
-  opacity: 0;
+.page-leave {
+  top: 0;
 }
 
-.page-leave {
-  opacity: 1;
+.page-leave-to {
+  top: -150%;
 }
 
 .page-leave-active {
-  transition: opacity 300ms;
+  transition: top 0.6s;
 }
 </style>
