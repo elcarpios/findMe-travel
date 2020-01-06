@@ -16,22 +16,14 @@ import { MOSAIC } from '~/components/helpers/constants';
 export default {
   components: { ArticleMosaic, InfiniteLoading },
   asyncData ({ route }) {
-    let resolve;
-    const isLatest = route.name.includes('posts');
-
-    if (isLatest) {
-      resolve = require.context('~/content/posts/', true, /\.md$/);
-    } else {
-      resolve = require.context('~/content/stories/', true, /\.md$/);
-    }
-
+    const resolve = require.context('~/content/posts/', true, /\.md$/);
     const slugs = resolve.keys().map(slug => slug.slice(2).slice(0, -3));
     const lazySlugs = slugs.splice(MOSAIC.startingArticles);
 
     return {
       slugs,
       lazySlugs,
-      type: isLatest ? 'posts' : 'stories'
+      type: 'posts'
     };
   },
   methods: {

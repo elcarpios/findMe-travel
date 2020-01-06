@@ -8,7 +8,7 @@
         {{ post.date }}
       </time>
     </div>
-    <nuxt-link :to="{ name: 'posts-slug', params: { slug, isDeeplinking: false }}">
+    <nuxt-link :to="{ name: `${type}-slug`, params: { slug, isFromMosaic: false }}">
       <Img
         :src="post.media.src"
         :alt="post.media.alt"
@@ -18,7 +18,7 @@
     <div class="mosaic-subtitle">
       {{ post.subtitle }}
     </div>
-    <nuxt-link :to="{ name: 'posts-slug', params: { slug, isDeeplinking: false }}">
+    <nuxt-link :to="{ name: `${type}-slug`, params: { slug, isFromMosaic: false }}">
       <h1 class="mosaic-title justify font-bold leading-relaxed mt-1 mb-1 mx-1">
         {{ post.title }}
       </h1>

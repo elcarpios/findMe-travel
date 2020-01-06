@@ -1,13 +1,13 @@
 ---
-id: 1
-title: 'This is the title, and it is a sooo large title because i want to say a lot of things'
+id: 2
+title: '2222222'
 media: {
   src: 'https://blog.fuertehoteles.com/wp-content/uploads/2016/07/playas-de-estepona.jpg',
   alt: 'Beach from Esteppona'
 }
 author: 'Carpio'
 date: 'Today'
-description: 'Jamón del bueno en París'
+excerpt: 'Jamón del bueno en París'
 categories: ['frontend', 'webdev']
 tags: ['vue.js', 'markdown']
 ---
