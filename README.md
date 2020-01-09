@@ -1,22 +1,15 @@
 # findMe-travel
 
-> FindMe-travel
+## Stack
+- Vue / Nuxt
+- Tailwind
+- Markdown
 
-## Build Setup
-
-``` bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Features
+- Google analytics
+- Push Notifications
+- PWA
+- SEO meta tags
+- Posts & Images Lazy loading
+- Smooth transitions
+- Not database connections necessary
