@@ -1,9 +1,20 @@
 <template>
-  <h1>Welcome home</h1>
+  <div class="w-full h-full">
+    <HomeCard :key="section.slug" v-for="section in sections" :section="section" />
+  </div>
 </template>
 
 <script>
+import HomeCard from '~/components/mosaic/HomeCard';
+import { SECTIONS } from '~/components/helpers/constants';
+
 export default {
+  components: { HomeCard },
+  data () {
+    return {
+      sections: SECTIONS
+    };
+  },
   head () {
     const meta = {
       title: 'Home sweet home',

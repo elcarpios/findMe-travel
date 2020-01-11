@@ -12,7 +12,7 @@
       <Img
         :src="post.media.src"
         :alt="post.media.alt"
-        :className="'media h-48 object-fill w-full'"
+        :className="'media h-48'"
       />
     </nuxt-link>
     <div class="mosaic-subtitle">

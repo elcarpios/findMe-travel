@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt" :class="className">
+  <img :src="src" :alt="alt" :class="className + ' object-cover w-full'">
 </template>
 
 <script>

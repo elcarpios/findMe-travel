@@ -9,7 +9,7 @@
     <Img
       :src="headlines.media.src"
       :alt="headlines.media.alt"
-      :className="'media h-56 object-fill w-full'"
+      :className="'media h-56'"
     />
     <div class="article-details py-3 px-2">
       <div class="metadata-details flex justify-between items-center mb-2">
