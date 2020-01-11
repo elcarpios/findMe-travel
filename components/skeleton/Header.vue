@@ -1,7 +1,7 @@
 <template>
   <header class="max-w-full flex flex-col justify-center items-center py-2">
     <nuxt-link to="/">
-      <div class="text-center border border-white rounded py-2 px-4 text-white">
+      <div class="text-center border tracking-wide border-white rounded py-2 px-4 text-white">
         findMe.<span class="font-bold">travel</span>
       </div>
     </nuxt-link>

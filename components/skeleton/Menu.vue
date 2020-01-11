@@ -5,7 +5,7 @@
         :key="section.slug"
         v-for="section in sections"
         :to="`/${section.slug}`"
-        class="link border-primaryDark border-b-4"
+        class="link border-primaryDark border-b-4 h-10"
       >
         {{ section.name }}
       </nuxt-link>
@@ -39,6 +39,6 @@ ul::-webkit-scrollbar {
 }
 
 ul > .link {
-  @apply px-6 my-0 scrolling-touch flex-grow text-center;
+  @apply tracking-wider font-mono text-sm px-6 my-0 scrolling-touch flex-grow text-center flex flex-col justify-center;
 }
 </style>
