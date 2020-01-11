@@ -27,6 +27,6 @@ export default {
 
 <style scoped>
 span {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 170, 155, 0.8);
 }
 </style>
