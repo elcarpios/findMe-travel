@@ -4,7 +4,7 @@
       <nuxt-link
         :key="section.slug"
         v-for="section in sections"
-        :to="`/${section.slug}`"
+        :to="{ name: section.slug }"
         class="link border-primaryDark border-b-4 h-10"
       >
         {{ section.name }}
