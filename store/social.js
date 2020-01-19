@@ -4,7 +4,8 @@ export const state = () => ({
 });
 
 export const getters = {
-  isLogged: state => state.user.displayName
+  username: state => state.user.displayName,
+  shouldPrompt: state => !state.prompted && !state.user.displayName
 };
 
 export const mutations = {

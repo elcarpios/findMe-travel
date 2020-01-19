@@ -1,15 +1,18 @@
 <template>
   <header class="max-w-full flex justify-around items-center py-2">
     <nuxt-link to="/">
-      <div class="text-center border tracking-wide border-white rounded py-2 px-4 text-white">
+      <div class="border-white-header">
         findMe.<span class="font-bold">travel</span>
       </div>
     </nuxt-link>
-    <nuxt-link v-show="user" to="/my-space">
-      <div class="text-center border tracking-wide border-white rounded py-2 px-4 text-white">
+    <nuxt-link v-if="user" to="/my-space">
+      <div class="border-white-header">
         ✈️ {{ user }}
       </div>
     </nuxt-link>
+    <button v-else @click="signIn" class="border-white-header">
+      Sign in
+    </button>
   </header>
 </template>
 
@@ -20,11 +23,25 @@ header {
 </style>
 
 <script>
+import { firebase } from '~/services/firebase';
+
 export default {
   computed: {
     user () {
-      return this.$store.getters['social/isLogged'];
+      return this.$store.getters['social/username'];
+    }
+  },
+  methods: {
+    signIn () {
+      firebase.auth()
+        .signInWithPopup(new firebase.auth.GoogleAuthProvider());
     }
   }
 };
 </script>
+
+<style lang="postcss" scoped>
+.border-white-header {
+  @apply text-center border tracking-wide border-white rounded py-2 px-4 text-white;
+}
+</style>
