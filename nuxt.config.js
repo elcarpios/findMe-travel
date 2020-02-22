@@ -2,6 +2,7 @@ import Mode from 'frontmatter-markdown-loader/mode';
 
 const path = require('path');
 const glob = require('glob');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 export default {
   mode: 'universal',
@@ -69,7 +70,8 @@ export default {
   */
   plugins: [
     '~/plugins/fire-auth.js',
-    '~/plugins/vue-inject.js'
+    '~/plugins/vue-inject.js',
+    '~/plugins/vue-lazysizes.client.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -95,8 +97,7 @@ export default {
   */
   modules: [
     '@nuxtjs/onesignal',
-    '@nuxtjs/pwa',
-    'nuxt-lazy-load'
+    '@nuxtjs/pwa'
   ],
   /*
   ** Build configuration
@@ -106,6 +107,7 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      // Frontmatter
       config.module.rules.push({
         test: /\.md$/,
         include: path.resolve(__dirname, 'content'),
@@ -117,6 +119,21 @@ export default {
           mode: [Mode.VUE_COMPONENT]
         }
       });
+
+      // CopyWebpackPlugin
+      config.plugins.push(new CopyWebpackPlugin([
+        {
+          from: './assets/images',
+          to: 'assets/images',
+          toType: 'dir'
+        }
+      ]));
+
+      // Lazysizes
+      if (ctx.isClient) {
+        ctx.loaders.vue.transformAssetUrls.img = ['data-src', 'src']
+        ctx.loaders.vue.transformAssetUrls.source = ['data-srcset', 'srcset']
+      }
     }
   }
 };

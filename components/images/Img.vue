@@ -1,5 +1,14 @@
 <template>
-  <img :src="src" :alt="alt" :class="className + ' object-cover w-full text-2xl text-center italic'">
+  <figure class="picture">
+    <picture>
+      <img
+        :data-src="src"
+        :alt="alt"
+        :class="className + ' lazyload object-cover w-full text-2xl text-center italic'"
+        data-sizes="auto"
+        >
+    </picture>
+  </figure>
 </template>
 
 <script>
@@ -31,7 +40,7 @@ img {
   line-height: 3em;
 }
 
-img:not(.isLoaded) {
+img:not(.lazyloaded) {
   border: 1px solid #ADAFBC;
   background: linear-gradient(to right, #D8D9DD, #ADAFBC, #D8D9DD);
   background-size: 200vw 100%;

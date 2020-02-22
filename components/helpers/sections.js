@@ -2,17 +2,17 @@ export const SECTIONS = [
   {
     name: 'Latest',
     slug: 'posts',
-    logo: '~assets/images/findme/latest.jpg'
+    logo: '_nuxt/assets/images/findme/latest.jpeg'
   },
   {
     name: 'Stories',
     slug: 'stories',
-    logo: '~assets/images/findme/stories.jpg'
+    logo: '_nuxt/assets/images/findme/stories.jpeg'
   },
   {
     name: 'My Place',
     slug: 'my-place',
-    logo: '~assets/images/findme/my-place.jpg'
+    logo: '_nuxt/assets/images/findme/my-place.jpeg'
   }
 ];
 
