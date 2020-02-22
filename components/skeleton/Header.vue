@@ -17,3 +17,5 @@ header {
   @apply text-center border tracking-wide border-white rounded py-2 px-4 text-white;
 }
 </style>
+
+// TODO: Increas z-index to avoid position:absolute collision

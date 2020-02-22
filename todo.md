@@ -1,0 +1,1 @@
+- Sign in prompt always appears at the landpage when the user is already signed in
