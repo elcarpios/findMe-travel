@@ -6,7 +6,7 @@
 
 <script>
 import HomeCard from '~/components/mosaic/HomeCard';
-import { SECTIONS } from '~/components/helpers/constants';
+import { SECTIONS } from '~/components/helpers/sections';
 
 export default {
   components: { HomeCard },

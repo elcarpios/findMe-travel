@@ -11,7 +11,7 @@
 <script>
 import InfiniteLoading from 'vue-infinite-loading';
 import ArticleMosaic from '~/components/mosaic/ArticleMosaic';
-import { MOSAIC } from '~/components/helpers/constants';
+import { MOSAIC } from '~/components/helpers/sections';
 
 export default {
   components: { ArticleMosaic, InfiniteLoading },

@@ -5,7 +5,7 @@
     <Main class="flex-grow" />
     <Footer />
     <Toast />
-    <FirebaseAuth />
+    <FirebaseAuth v-if="$route.name !== 'my-place'" />
   </div>
 </template>
 

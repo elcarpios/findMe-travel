@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { SECTIONS } from '~/components/helpers/constants';
+import { SECTIONS } from '~/components/helpers/sections';
 
 export default {
   data () {
@@ -39,6 +39,6 @@ ul::-webkit-scrollbar {
 }
 
 ul > .link {
-  @apply tracking-wider font-mono text-sm px-6 my-0 scrolling-touch flex-grow text-center flex flex-col justify-center;
+  @apply tracking-wider font-mono text-sm my-0 scrolling-touch flex-grow text-center flex flex-col justify-center;
 }
 </style>

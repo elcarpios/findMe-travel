@@ -3,9 +3,9 @@
     <button @click="closePrompt" class="close">
       X
     </button>
-    <button @click="signIn" class="sign-in">
-      Sign in with Google
-    </button>
+    <nuxt-link :to="{ name: 'my-place' }" class="sign-in">
+      Sign in
+    </nuxt-link>
   </aside>
 </template>
 
