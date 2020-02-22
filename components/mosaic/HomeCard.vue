@@ -1,7 +1,12 @@
 <template>
   <nuxt-link :to="section.slug">
     <section class="w-full h-full h-48 inline-flex justify-center flex-col text-center">
-      <Img :src="section.logo" :className="'media h-56'" />
+      <Img
+        :src="section.logo.src"
+        :alt="section.logo.alt"
+        :isLazy="section.logo.isLazy"
+        :className="'media h-56'"
+        />
       <div class="absolute w-full">
         <span class="text-white tracking-wider font-semibold text-2xl font-mono py-1 px-2">
           {{ section.name }}

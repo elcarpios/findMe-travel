@@ -2,17 +2,29 @@ export const SECTIONS = [
   {
     name: 'Latest',
     slug: 'posts',
-    logo: '_nuxt/assets/images/findme/latest.jpeg'
+    logo: {
+      src: '_nuxt/assets/images/findme/latest.jpeg',
+      alt: '',
+      isLazy: false
+    }
   },
   {
     name: 'Stories',
     slug: 'stories',
-    logo: '_nuxt/assets/images/findme/stories.jpeg'
+    logo: {
+      src: '_nuxt/assets/images/findme/stories.jpeg',
+      alt: '',
+      isLazy: false
+    }
   },
   {
     name: 'My Place',
     slug: 'my-place',
-    logo: '_nuxt/assets/images/findme/my-place.jpeg'
+    logo: {
+      src: '_nuxt/assets/images/findme/my-place.jpeg',
+      alt: '',
+      isLazy: false
+    }
   }
 ];
 

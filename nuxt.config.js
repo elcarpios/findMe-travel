@@ -69,9 +69,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/vue-lazysizes.client.js',
     '~/plugins/fire-auth.js',
-    '~/plugins/vue-inject.js',
-    '~/plugins/vue-lazysizes.client.js'
+    '~/plugins/vue-inject.js'
   ],
   /*
   ** Nuxt.js dev-modules

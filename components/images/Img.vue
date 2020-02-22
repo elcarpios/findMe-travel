@@ -2,9 +2,10 @@
   <figure class="picture">
     <picture>
       <img
+        :src="isLazy ? '' : src"
         :data-src="src"
         :alt="alt"
-        :class="className + ' lazyload object-cover w-full text-2xl text-center italic'"
+        :class="[className, 'object-cover w-full text-2xl text-center italic', isLazy ? 'lazyload' : '']"
         data-sizes="auto"
         >
     </picture>
@@ -25,6 +26,10 @@ export default {
     className: {
       type: String,
       default: ''
+    },
+    isLazy: {
+      type: Boolean,
+      default: true
     }
   }
 };
@@ -41,7 +46,6 @@ img {
 }
 
 img:not(.lazyloaded) {
-  border: 1px solid #ADAFBC;
   background: linear-gradient(to right, #D8D9DD, #ADAFBC, #D8D9DD);
   background-size: 200vw 100%;
   animation: animated-background 1.8s backwards infinite;

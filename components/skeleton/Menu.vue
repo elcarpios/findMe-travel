@@ -1,5 +1,5 @@
 <template>
-  <nav class="sticky top-0 bg-primaryDark pt-1 text-white border-t border-white max-w-full">
+  <nav class="sticky z-10 top-0 bg-primaryDark pt-1 text-white border-t border-white max-w-full">
     <ul class="flex no-wrap overflow-x-auto scrolling-touch w-auto">
       <nuxt-link
         :key="section.slug"
