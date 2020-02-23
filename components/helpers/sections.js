@@ -29,6 +29,6 @@ export const SECTIONS = [
 ];
 
 export const MOSAIC = {
-  startingArticles: 5,
+  startingArticles: 3,
   lazyLoadArticles: 3
 };

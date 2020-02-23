@@ -29,6 +29,7 @@ export default {
   methods: {
     infiniteHandler ($state) {
       this.slugs = this.slugs.concat(this.lazySlugs.splice(0, MOSAIC.lazyLoadArticles));
+      $state.loaded();
     }
   }
 };

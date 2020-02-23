@@ -1,5 +1,5 @@
 <template>
-  <article class="fixed top-0 bottom-0 min-h-full overflow-y-scroll bg-white">
+  <article class="fixed z-20 top-0 bottom-0 min-h-full overflow-y-scroll bg-white">
     <a v-if="isFromMosaic" class="go-back" target="_self" to="/">
       <button>X</button>
     </a>
