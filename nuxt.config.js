@@ -1,7 +1,7 @@
 import Mode from 'frontmatter-markdown-loader/mode';
+import { routesGenerator } from './services/router';
 
 const path = require('path');
-const glob = require('glob');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 export default {
@@ -10,9 +10,7 @@ export default {
   ** Generate routes
   */
   generate: {
-    routes: () => glob
-      .sync('posts/*.md', { cwd: 'content' })
-      .map(slug => slug.slice(0, -3))
+    routes: routesGenerator
   },
   /*
   ** Headers of the page
