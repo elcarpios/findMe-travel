@@ -12,21 +12,23 @@
       :className="'media h-56'"
     />
     <div class="article-details py-3 px-2">
-      <div class="metadata-details flex justify-between items-center mb-2">
-        <span class="author border-l-4 border-red pl-2 italic">{{ headlines.author }}</span>
+      <div class="metadata-details flex justify-between items-center py-1">
+        <span class="author border-l-4 border-primary pl-2">{{ headlines.author }}</span>
         <time
-          :datetime="headlines.date"
-          class="date pr-1 font-bold text-sm"
-        >{{ headlines.date }}</time>
+          :datetime="headlines.date.dateTime"
+          class="date pr-1 italic text-sm"
+        >{{ headlines.date.output }}</time>
       </div>
-      <h1 v-html="headlines.title" class="title font-bold text-xl leading-normal text-justify mb-2" />
-      <ul v-if="headlines.categories" class="categories mb-2">
-        <li :key="index" v-for="(category, index) in headlines.categories" class="inline-block bg-primary text-white py-1 px-2 mr-2 text-xs font-bold rounded-sm uppercase">
+      <h1 v-html="headlines.title" class="title font-bold text-xl leading-normal text-justify py-1" />
+      <ul v-if="headlines.categories" class="categories py-1 text-white text-xs rounded-sm uppercase">
+        <li :key="index" v-for="(category, index) in headlines.categories" class="inline-block bg-primary py-1 px-2 mr-2 rounded">
           {{ category }}
         </li>
       </ul>
-      <div v-html="headlines.description" class="details-description" />
-      <component :is="articleBody" />
+      <h2 v-html="headlines.excerpt" class="details-excerpt text-l leading-normal text-justify py-2" />
+      <client-only>
+        <component :is="articleBody" class="py-1" />
+      </client-only>
     </div>
   </article>
 </template>
@@ -95,4 +97,5 @@ export default {
 .page-leave-active {
   transition: top 0.4s;
 }
+
 </style>

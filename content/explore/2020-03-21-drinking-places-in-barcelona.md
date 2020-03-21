@@ -1,13 +1,15 @@
 ---
-id: 6
-title: 'This is the title, and it is a sooo large title because i want to say a lot of things'
+title: 'Where we can go to have some drinks in Barcelona?'
 media: {
-  src: 'https://blog.fuertehoteles.com/wp-content/uploads/2016/07/playas-de-estepona.jpg',
+  src: '/_nuxt/assets/content/explore/2020-03-21-drinking-places-in-barcelona.jpg',
   alt: 'Beach from Esteppona'
 }
-author: 'Carpio'
-date: 'Today'
-description: 'Jamón del bueno en París'
+author: 'Victor Carpio'
+date: {
+  dateTime: '2020-03-21T21:00:00',
+  output: '21/03/2020'
+}
+excerpt: "Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus."
 categories: ['frontend', 'webdev']
 tags: ['vue.js', 'markdown']
 ---

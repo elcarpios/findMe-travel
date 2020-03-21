@@ -9,7 +9,7 @@ export default {
   components: { ArticleDetails },
   asyncData ({ params, route }) {
     return {
-      type: 'posts',
+      type: 'explore',
       isFromMosaic: params.isFromMosaic,
       slug: params.slug
     };

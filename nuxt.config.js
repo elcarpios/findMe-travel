@@ -114,6 +114,9 @@ export default {
           vue: {
             root: 'article-body'
           },
+          markdownIt: {
+            html: true
+          },
           mode: [Mode.VUE_COMPONENT]
         }
       });
@@ -123,6 +126,12 @@ export default {
         {
           from: './assets/images',
           to: 'assets/images',
+          toType: 'dir'
+        },
+        {
+          from: './content/**',
+          to: 'assets',
+          ignore: ['*.md'],
           toType: 'dir'
         }
       ]));

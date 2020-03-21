@@ -1,10 +1,10 @@
 <template>
-  <span>
+  <span class="w-full">
     <ArticleMosaic :key="slug" v-for="slug in slugs" :slug="slug" :type="type" />
     <client-only>
       <infinite-loading v-if="lazySlugs.length > 0" @infinite="infiniteHandler" />
     </client-only>
-    <nuxt-child keep-alive />
+    <nuxt-child />
   </span>
 </template>
 
@@ -16,14 +16,14 @@ import { MOSAIC } from '~/components/helpers/sections';
 export default {
   components: { ArticleMosaic, InfiniteLoading },
   asyncData ({ route }) {
-    const resolve = require.context('~/content/posts/', true, /\.md$/);
+    const resolve = require.context('~/content/explore/', true, /\.md$/);
     const slugs = resolve.keys().map(slug => slug.slice(2).slice(0, -3));
     const lazySlugs = slugs.splice(MOSAIC.startingArticles);
 
     return {
       slugs,
       lazySlugs,
-      type: 'posts'
+      type: 'explore'
     };
   },
   methods: {
