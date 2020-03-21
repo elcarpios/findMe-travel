@@ -1,11 +1,11 @@
 <template>
-  <section class="about flex-grow relative bg-darkGrey">
+  <section class="about flex-grow relative">
     <Img
       :src="'/_nuxt/assets/images/findme/about-inside.jpeg'"
       :alt="'Wood desktop with some books'"
       :className="'media h-56'"
     />
-    <div class="text-center flex justify-center">
+    <div class="text-center flex justify-center bg-white">
       <h2 class="title">Carpio Foundation Poject</h2>
       <div class="description">
         Lorem fistrum al ataquerl te voy a borrar el cerito benemeritaar la caidita papaar papaar está la cosa muy malar hasta luego Lucas fistro. Ese hombree caballo blanco caballo negroorl está la cosa muy malar no puedor. Diodeno qué dise usteer torpedo me cago en tus muelas de la pradera.
@@ -30,7 +30,6 @@ export default {
 }
 
 .description {
-  border-radius: 0.375rem;
-  @apply tracking-wide italic bg-white mt-8 mx-6 py-4 px-6 text-justify mb-6;
+  @apply tracking-wide italic mt-8 mx-6 py-4 px-4 text-justify mb-6;
 }
 </style>

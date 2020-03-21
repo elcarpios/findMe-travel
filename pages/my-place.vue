@@ -1,18 +1,42 @@
 <template>
-  <section class="flex items-center w-full justify-center flex-grow bg-secondary">
+  <section class="flex w-full justify-center flex-grow">
     <div v-if="user">
       <button class="social-button" @click="logout">
         Logout
       </button>
     </div>
-    <div v-else>
-      <ul class="social-group text-left my-6 mx-2">
-        <li v-for="social in SOCIALS" class="social-item mb-6">
+    <div v-else class="w-full">
+      <div class="my-plans-landpage">
+        <h1 class="m-8 mb-6 tracking-widest text-2xl">Welcome to your place</h1>
+        <div class="svg-grid">
+          <img
+            v-for="icon in icons"
+            :src="`/_nuxt/assets/images/findme/icons/${icon}.svg`"
+            height="35px"
+            width="35px"
+          />
+        </div>
+        <div class="my-6 px-6 w-full tracking-wide">
+          <h2>Here you can:</h2>
+          <ul class="my-1 px-2 italic">
+            <li>- Organize plans with friends</li>
+            <li>- Keep track of your plans</li>
+          </ul>
+        </div>
+      </div>
+      <ul class="social-group text-sm mt-6 mx-2 flex justify-center items-center flex-col">
+        <li v-for="social in SOCIALS" class="social-item mb-4">
           <button
             @click="signIn"
             :style="{ backgroundColor: social.bgColor, color: social.color }"
             class="social-button"
           >
+            <img
+              class="mr-4 ml-10"
+              :src="social.icon.src"
+              :height="`${social.icon.height}px`"
+              :width="`${social.icon.width}px`"
+            />
             Sign in with {{ social.name }}
           </button>
         </li>
@@ -27,7 +51,10 @@ import { SOCIALS } from '~/components/helpers/social';
 
 export default {
   data () {
-    return { SOCIALS };
+    return {
+      icons: ['walk', 'sun', 'pizza', 'ship', 'airplane', 'earth'],
+      SOCIALS
+    };
   },
   computed: {
     user () {
@@ -53,9 +80,28 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.my-plans-landpage {
+  background: linear-gradient(180deg, #00AA9B 0%, rgba(77, 192, 181, 0.5) 87.66%);
+  height: 20rem;
+  margin-top: 1px;
+  border-bottom-right-radius: 50%;
+  @apply flex flex-col text-white items-center;
+}
+
+.svg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 4rem;
+  grid-row-gap: 2rem;
+}
+
+.social-item {
+  min-width: 80%;
+}
+
 .social-button {
   min-width: 220px;
   min-height: 40px;
-  @apply py-2 px-4 shadow-md rounded-sm font-medium tracking-tight bg-white font-serif;
+  @apply font-bold py-2 px-4 shadow tracking-tight border rounded-lg flex items-stretch w-full;
 }
 </style>
