@@ -1,5 +1,5 @@
 ---
-title: 'Good news: Cheap tickets Barcelona-Madrid'
+title: 'Cheap tickets Barcelona-Madrid'
 media: {
   src: '/_nuxt/assets/content/explore/2020-03-21-cheap-tickets-barcelona-madrid.jpg',
   alt: 'Beach from Esteppona'

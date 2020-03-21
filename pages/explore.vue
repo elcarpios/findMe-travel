@@ -1,5 +1,5 @@
 <template>
-  <span class="w-full">
+  <span class="w-full mb-4">
     <ArticleMosaic :key="slug" v-for="slug in slugs" :slug="slug" :type="type" />
     <client-only>
       <infinite-loading v-if="lazySlugs.length > 0" @infinite="infiniteHandler" />

@@ -14,13 +14,15 @@
             {{ post.date.output }}
         </time>
       </div>
-      <div class="mosaic-description text-center absolute flex flex-col">
-      <div class="mosaic-title font-bold leading-relaxed px-4 py-1 shadow-md -m-8 mx-6 bg-white border-grey border border-solid">
-        <h1>{{ post.title }}</h1>
-      </div>
-      <div class="mosaic-excerpt w-full shadow tracking-wide mt-8 px-4 pt-1 pb-2 text-sm">
-        <h2>{{ post.excerpt }}</h2>
-      </div>
+      <div class="relative flex justify-center w-full">
+        <div class="mosaic-description text-center absolute flex flex-col">
+          <h1 class="mosaic-title font-bold leading-relaxed px-4 py-1 shadow-md -m-5 mx-6 bg-white border-grey border border-solid">
+           {{ post.title }}
+          </h1>
+          <h2 class="mosaic-excerpt w-full shadow tracking-wide mt-8 px-4 pt-1 pb-2 text-sm">
+            {{ post.excerpt }}
+          </h2>
+        </div>
       </div>
     </nuxt-link>
   </article>
