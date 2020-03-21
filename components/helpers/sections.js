@@ -3,7 +3,7 @@ export const SECTIONS = [
     name: 'Explore',
     slug: 'explore',
     logo: {
-      src: '/_nuxt/assets/images/findme/latest.jpeg',
+      src: '/_nuxt/assets/images/findme/explore.jpeg',
       alt: '',
       isLazy: false
     }
@@ -12,7 +12,7 @@ export const SECTIONS = [
     name: 'My Place',
     slug: 'my-place',
     logo: {
-      src: '/_nuxt/assets/images/findme/stories.jpeg',
+      src: '/_nuxt/assets/images/findme/my-place.jpeg',
       alt: '',
       isLazy: false
     }
@@ -21,7 +21,7 @@ export const SECTIONS = [
     name: 'About',
     slug: 'about',
     logo: {
-      src: '/_nuxt/assets/images/findme/my-place.jpeg',
+      src: '/_nuxt/assets/images/findme/about.jpeg',
       alt: '',
       isLazy: false
     }

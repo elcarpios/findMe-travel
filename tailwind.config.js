@@ -13,7 +13,8 @@ module.exports = {
       white: '#FFFFFF',
       yellow: '#FBBC05',
       red: '#EA4335',
-      grey: '#E5E5E5'
+      grey: '#E5E5E5',
+      darkGrey: '#C4C4C4'
     }
   },
   variants: {},
