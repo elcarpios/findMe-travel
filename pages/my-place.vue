@@ -1,23 +1,27 @@
 <template>
   <section class="flex w-full justify-center flex-grow">
     <div v-if="user">
-      <button class="social-button" @click="logout">
+      <button @click="logout" class="social-button">
         Logout
       </button>
     </div>
     <div v-else class="w-full">
       <div class="my-plans-landpage">
-        <h1 class="m-6 tracking-widest text-2xl">Welcome to your place</h1>
+        <h1 class="m-6 tracking-widest text-2xl">
+          Welcome to your place
+        </h1>
         <div class="svg-grid">
           <img
             v-for="icon in icons"
             :src="`/_nuxt/assets/images/findme/icons/${icon}.svg`"
             height="35px"
             width="35px"
-          />
+          >
         </div>
         <div class="my-6 px-6 w-full tracking-wide">
-          <h2>Here you can:</h2>
+          <h2>
+            Here you can:
+          </h2>
           <ul class="my-1 px-2 italic">
             <li>- Organize plans with friends</li>
             <li>- Keep track of your plans</li>
@@ -32,11 +36,11 @@
             class="social-button"
           >
             <img
-              class="mr-4 ml-10"
               :src="social.icon.src"
               :height="`${social.icon.height}px`"
               :width="`${social.icon.width}px`"
-            />
+              class="mr-4 ml-10"
+            >
             Sign in with {{ social.name }}
           </button>
         </li>

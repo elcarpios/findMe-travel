@@ -6,7 +6,7 @@
         :alt="section.logo.alt"
         :isLazy="section.logo.isLazy"
         :className="'media h-56'"
-        />
+      />
       <div class="absolute w-full">
         <span class="text-white tracking-wider font-semibold text-2xl font-mono py-1 px-2">
           {{ section.name }}

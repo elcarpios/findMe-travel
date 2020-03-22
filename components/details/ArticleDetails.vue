@@ -1,5 +1,5 @@
 <template>
-  <article class="fixed z-20 top-0 bottom-0 min-h-full overflow-y-scroll bg-white">
+  <article class="fixed w-full z-20 top-0 bottom-0 min-h-full overflow-y-scroll bg-white">
     <a v-if="isFromMosaic" class="go-back" target="_self" to="/">
       <button>X</button>
     </a>
@@ -11,6 +11,7 @@
       :alt="headlines.media.alt"
       :className="'article-top-media'"
     />
+    <div class="article-top-media-shadow" />
     <div class="relative flex justify-center w-full">
       <div class="article-description text-center absolute flex flex-col">
         <h1 class="article-title">
@@ -21,7 +22,7 @@
             {{ headlines.author }}
           </span>
           <time :datetime="headlines.date.datetime" class="article-date metadata-component rounded right-0 mr-4 px-2 bg-yellow">
-              {{ headlines.date.output }}
+            {{ headlines.date.output }}
           </time>
         </div>
         <div class="article-body-details relative text-justify mx-4 my-2">
@@ -72,6 +73,11 @@ export default {
 <style lang="postcss" scoped>
 .go-back {
   @apply absolute text-white text-2xl top-0 right-0 mt-8 mr-8;
+}
+
+.article-top-media-shadow {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+  @apply absolute h-8 w-full -mt-8;
 }
 
 .article-title {

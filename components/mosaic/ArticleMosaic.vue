@@ -11,13 +11,13 @@
           {{ post.author }}
         </span>
         <time :datetime="post.date.datetime" class="mosaic-date metadata-component right-0 mr-4 bg-yellow">
-            {{ post.date.output }}
+          {{ post.date.output }}
         </time>
       </div>
       <div class="relative flex justify-center w-full">
         <div class="mosaic-description text-center absolute flex flex-col">
           <h1 class="mosaic-title font-bold leading-relaxed px-4 py-1 shadow-md -m-5 mx-6 bg-white border-grey border border-solid">
-           {{ post.title }}
+            {{ post.title }}
           </h1>
           <h2 class="mosaic-excerpt w-full shadow tracking-wide mt-8 px-4 pt-1 pb-2 text-sm">
             {{ post.excerpt }}

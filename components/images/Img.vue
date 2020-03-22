@@ -7,7 +7,7 @@
         :alt="alt"
         :class="[className, 'object-cover w-full text-2xl text-center italic', isLazy ? 'lazyload' : '']"
         data-sizes="auto"
-        >
+      >
     </picture>
   </figure>
 </template>
