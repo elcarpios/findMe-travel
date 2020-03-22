@@ -30,6 +30,8 @@
           <client-only>
             <component :is="articleBody" class="py-1" />
           </client-only>
+          <hr class="w-full mt-4 mb-2">
+          <div :data-href="articleUri" class="fb-comments mb-6" data-width="" data-numposts="5" />
         </div>
       </div>
     </div>
@@ -56,7 +58,10 @@ export default {
     }
   },
   data () {
-    return { articleBody: null };
+    return {
+      articleBody: null,
+      articleUri: `https://findme.travel${this.$route.path}`
+    };
   },
   head () {
     return this.$buildMetas(this.headlines);
@@ -66,6 +71,9 @@ export default {
 
     this.headlines = post.attributes;
     this.articleBody = post.vue.component;
+  },
+  mounted () {
+    window.FB && window.FB.XFBML.parse();
   }
 };
 </script>

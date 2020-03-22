@@ -24,6 +24,9 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: 'https://connect.facebook.net/en_US/sdk.js' }
     ]
   },
   /*
@@ -69,7 +72,8 @@ export default {
   plugins: [
     '~/plugins/vue-lazysizes.client.js',
     '~/plugins/fire-auth.js',
-    '~/plugins/vue-inject.js'
+    '~/plugins/vue-inject.js',
+    { src: '~/plugins/vue-facebook.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
