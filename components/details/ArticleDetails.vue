@@ -1,30 +1,33 @@
 <template>
   <article class="fixed z-20 top-0 bottom-0 min-h-full overflow-y-scroll bg-white">
     <a v-if="isFromMosaic" class="go-back" target="_self" to="/">
-      <button>X</button>
+      <button>〈 Back</button>
     </a>
     <a v-else @click="$router.go(-1)" class="go-back">
-      <button>X</button>
+      <button>〈 Back</button>
     </a>
     <Img
       :src="headlines.media.src"
       :alt="headlines.media.alt"
-      :className="'media h-56'"
+      :className="'article-top-media'"
     />
-    <div class="article-details py-3 px-2">
-      <div class="metadata-details flex justify-between items-center py-1">
-        <span class="author border-l-4 border-primary pl-2">{{ headlines.author }}</span>
-        <time
-          :datetime="headlines.date.dateTime"
-          class="date pr-1 italic text-sm"
-        >{{ headlines.date.output }}</time>
+    <div class="relative flex justify-center w-full">
+      <div class="mosaic-description text-center absolute flex flex-col">
+        <h1 class="mosaic-title">
+          {{ headlines.title }}
+        </h1>
+        <div class="article-metadata-details flex justify-around absolute min-w-full text-white -mt-8 text-sm">
+          <span class="mosaic-author metadata-component rounded left-0 ml-2 px-2 italic bg-red">
+            {{ headlines.author }}
+          </span>
+          <time :datetime="headlines.date.datetime" class="mosaic-date metadata-component rounded right-0 mr-4 px-2 bg-yellow">
+              {{ headlines.date.output }}
+          </time>
+        </div>
       </div>
-      <h1 v-html="headlines.title" class="title font-bold text-xl leading-normal text-justify py-1" />
-      <ul v-if="headlines.categories" class="categories py-1 text-white text-xs rounded-sm uppercase">
-        <li :key="index" v-for="(category, index) in headlines.categories" class="inline-block bg-primary py-1 px-2 mr-2 rounded">
-          {{ category }}
-        </li>
-      </ul>
+    </div>
+
+    <div class="article-details">
       <h2 v-html="headlines.excerpt" class="details-excerpt text-l leading-normal text-justify py-2" />
       <client-only>
         <component :is="articleBody" class="py-1" />
@@ -69,9 +72,19 @@ export default {
 
 <style lang="postcss" scoped>
 .go-back {
-  @apply absolute text-white text-2xl;
-  top: 15px;
-  right: 25px;
+  @apply absolute text-white text-xl top-0 mt-10 ml-3;
+}
+
+.article-details {
+  margin: 4rem 1.3rem;
+  @apply text-justify mx-4;
+}
+
+.mosaic-title {
+  margin-top: -1.2rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.6rem;
+  @apply font-bold leading-relaxed px-4 shadow-md mx-6 bg-white border-grey border border-solid;
 }
 
 .page-enter {

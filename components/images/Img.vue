@@ -50,4 +50,8 @@ img:not(.lazyloaded) {
   background-size: 200vw 100%;
   animation: animated-background 1.8s backwards infinite;
 }
+
+.article-top-media {
+  height: 20rem;
+}
 </style>

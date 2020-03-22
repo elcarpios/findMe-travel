@@ -7,7 +7,7 @@
     </div>
     <div v-else class="w-full">
       <div class="my-plans-landpage">
-        <h1 class="m-8 mb-6 tracking-widest text-2xl">Welcome to your place</h1>
+        <h1 class="m-6 tracking-widest text-2xl">Welcome to your place</h1>
         <div class="svg-grid">
           <img
             v-for="icon in icons"
