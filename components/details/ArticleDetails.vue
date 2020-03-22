@@ -1,10 +1,10 @@
 <template>
   <article class="fixed z-20 top-0 bottom-0 min-h-full overflow-y-scroll bg-white">
     <a v-if="isFromMosaic" class="go-back" target="_self" to="/">
-      <button>〈 Back</button>
+      <button>X</button>
     </a>
     <a v-else @click="$router.go(-1)" class="go-back">
-      <button>〈 Back</button>
+      <button>X</button>
     </a>
     <Img
       :src="headlines.media.src"
@@ -12,26 +12,25 @@
       :className="'article-top-media'"
     />
     <div class="relative flex justify-center w-full">
-      <div class="mosaic-description text-center absolute flex flex-col">
-        <h1 class="mosaic-title">
+      <div class="article-description text-center absolute flex flex-col">
+        <h1 class="article-title">
           {{ headlines.title }}
         </h1>
-        <div class="article-metadata-details flex justify-around absolute min-w-full text-white -mt-8 text-sm">
-          <span class="mosaic-author metadata-component rounded left-0 ml-2 px-2 italic bg-red">
+        <div class="article-details flex justify-around absolute min-w-full text-white -mt-8 text-sm">
+          <span class="article-author metadata-component rounded left-0 ml-2 px-2 italic bg-red">
             {{ headlines.author }}
           </span>
-          <time :datetime="headlines.date.datetime" class="mosaic-date metadata-component rounded right-0 mr-4 px-2 bg-yellow">
+          <time :datetime="headlines.date.datetime" class="article-date metadata-component rounded right-0 mr-4 px-2 bg-yellow">
               {{ headlines.date.output }}
           </time>
         </div>
+        <div class="article-body-details relative text-justify mx-4 my-2">
+          <h2 v-html="headlines.excerpt" class="details-excerpt text-l leading-normal text-justify py-2" />
+          <client-only>
+            <component :is="articleBody" class="py-1" />
+          </client-only>
+        </div>
       </div>
-    </div>
-
-    <div class="article-details">
-      <h2 v-html="headlines.excerpt" class="details-excerpt text-l leading-normal text-justify py-2" />
-      <client-only>
-        <component :is="articleBody" class="py-1" />
-      </client-only>
     </div>
   </article>
 </template>
@@ -72,15 +71,10 @@ export default {
 
 <style lang="postcss" scoped>
 .go-back {
-  @apply absolute text-white text-xl top-0 mt-10 ml-3;
+  @apply absolute text-white text-2xl top-0 right-0 mt-8 mr-8;
 }
 
-.article-details {
-  margin: 4rem 1.3rem;
-  @apply text-justify mx-4;
-}
-
-.mosaic-title {
+.article-title {
   margin-top: -1.2rem;
   padding-top: 0.7rem;
   padding-bottom: 0.6rem;
